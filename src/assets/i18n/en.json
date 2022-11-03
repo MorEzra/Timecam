@@ -1,0 +1,218 @@
+{
+    "Nav": {
+        "Categories": {
+            "Category1": "Our clocks - Workflow",
+            "Category2": "Routes and Costs",
+            "Category3": "About us",
+            "Category4": "Contact us"
+        },
+        "Login": "Login",
+        "Register": "Join us"
+    },
+    "About": {
+        "Header": "About us",
+        "subHeader1": "Mock Header",
+        "AboutUs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "fillRequest": {
+            "Date": "Pick a date",
+            "Filter": "Search by description"
+        },
+        "Table": {
+            "Row1": "Date",
+            "Row2": "Hours",
+            "Row3": "Description",
+            "Row4": "Edit",
+            "Paginator": {
+                "Of": "of",
+                "ItemsPerPage": "Items per page",
+                "NextPage": "Next page",
+                "PreviousPage": "Previous page"
+            }
+        },
+        "Warnings": {
+            "Invalid": "No jobs were done past this date"
+        }
+    },
+    "Pricing": {
+        "Header": "Routes and Costs",
+        "subHeader1": "Mock header",
+        "Text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Purchase": "Purchase",
+        "Monthly": "Monthly",
+        "Yearly": "Yearly",
+        "Toggle": "Show more"
+    },
+    "JoinUs": {
+        "Header": "Our customers are happy!",
+        "Text": "Choose your route and join us today",
+        "Button": "Join us"
+    },
+    "Footer": {
+        "Header": "Lets talk!",
+        "subHeader1": "Leave your details and we’ll contact you",
+        "subHeader2": "Or you can contact us",
+        "Contact": {
+            "Warnings": {
+                "FullName": {
+                    "Missing": "Please fill your full name",
+                    "Invalid": "Please use only letters",
+                    "Short": "Name is too short",
+                    "Long": "Name is too long"
+                },
+                "Phone": {
+                    "Missing": "Please fill your phone number",
+                    "Invalid": "Please fill a valid phone number"
+                },
+                "Email": {
+                    "Missing": "Please fill your email address",
+                    "Invalid": "Invalid email address",
+                    "Short": "Email address is too short",
+                    "Long": "Email address is too long"
+                }
+            },
+            "Fields": {
+                "FullName": "Full name",
+                "Phone": "Phone number",
+                "Email": "Email"
+            },
+            "Submit": "Submit"
+        }
+    },
+    "Login": {
+        "Header": "Login",
+        "Text": "Welcome! Login and start working easily",
+        "Warnings": {
+            "Email": {
+                "Missing": "Please fill your email address",
+                "Invalid": "Invalid email address",
+                "Short": "Email address is too short",
+                "Long": "Email address is too long"
+            },
+            "Password": {
+                "Missing": "Please fill your password",
+                "Invalid": "Please use only letters and numbers",
+                "Short": "Password is too short",
+                "Long": "Password is too long"
+            }
+        },
+        "Fields": {
+            "Email": "Email",
+            "Password": "Password"
+        },
+        "NotRegistered": "Not registered yet?",
+        "Register": "Register",
+        "Login": "Login",
+        "Forgot": "Forgot your password?"
+    },
+    "Register": {
+        "Header": "Join us",
+        "Text": "Join us today for free! Choose your route and start working easily.",
+        "Warnings": {
+            "ID": {
+                "Missing": "Please fill your ID number",
+                "Invalid": "Please fill a valid ID number"
+            },
+            "CompanyName": {
+                "Missing": "Please fill your company name",
+                "Invalid": "Invalid company name",
+                "Short": "Company name is too short",
+                "Long": "Company name is too long"
+            },
+            "Email": {
+                "Missing": "Please fill your email address",
+                "Invalid": "Invalid email address",
+                "Short": "Email address is too short",
+                "Long": "Email address is too long"
+            },
+            "FullName": {
+                "Missing": "Please fill your full name",
+                "Invalid": "Please use only letters",
+                "Short": "Name is too short",
+                "Long": "Name is too long"
+            },
+            "Phone": {
+                "Missing": "Please fill your phone number",
+                "Invalid": "Please fill a valid phone number"
+            },
+            "Password": {
+                "Missing": "Please fill your password",
+                "Invalid": "Please use only letters and numbers",
+                "Short": "Password is too short",
+                "Long": "Password is too long",
+                "Repeat": "Please repeat your password",
+                "Mismatch": "Passwords mismatch"
+            },
+            "FirstName": {
+                "Missing": "Please fill your first name",
+                "Invalid": "Please use only letters",
+                "Short": "First name is too short",
+                "Long": "First name is too long"
+            },
+            "Surname": {
+                "Missing": "Please fill your surname",
+                "Invalid": "Please use only letters",
+                "Short": "Surname is too short",
+                "Long": "Surname is too long"
+            },
+            "City": {
+                "Missing": "Please choose your city",
+                "Invalid": "City not found"
+            },
+            "Street": {
+                "Missing": "Please fill your street",
+                "Invalid": "Please use only letters and numbers",
+                "Short": "Street is too short",
+                "Long": "Street is too long"
+            }
+        },
+        "Cities": [
+            {
+                "id": "1",
+                "name": "Tel Aviv"
+            },
+            {
+                "id": "2",
+                "name": "Haifa"
+            },
+            {
+                "id": "3",
+                "name": "Be`er Sheva"
+            },
+            {
+                "id": "4",
+                "name": "Hod Hasharon"
+            },
+            {
+                "id": "5",
+                "name": "Kfar Saba"
+            }
+        ],
+        "FillRequest": {
+            "RegisterDetails": "Fill out your Registration details",
+            "PersonalDetails": "Fill out your Personal details",
+            "City": "Choose your city"
+        },
+        "Fields": {
+            "ID": "ID",
+            "CompanyName": "Company name",
+            "FullName": "Full name",
+            "Phone": "Phone number",
+            "Email": "Email",
+            "Password": "Password",
+            "RepeatPassword": "Repeat password",
+            "FirstName": "First name",
+            "Surname": "Surname",
+            "Street": "Street"
+        },
+        "Next": "Next",
+        "Back": "Back",
+        "Submit": "Submit",
+        "Login": "Login",
+        "Register": "Register",
+        "Registered": "Already registered?"
+    },
+    "Forgot": {
+        "Header": "Forgot your password?",
+        "Text": "Fill your Email address and we'll send you a recovery email"
+    }
+}

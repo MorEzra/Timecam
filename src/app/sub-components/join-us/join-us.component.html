@@ -1,0 +1,11 @@
+<div class="col-12 container" [ngClass]="{'mobile': appService.isMobile == true}">
+    <div class="customers">
+        <img src="{{src}}" alt="customers" width="325px">
+    </div>
+
+    <div class="inner" [ngClass]="{'mobile': appService.isMobile == true}">
+        <h2>{{'JoinUs.Header' | translate}}</h2>
+        <p>{{'JoinUs.Text' | translate}}</p>
+        <button *isDesktop class="btn" routerLink="/account/register">{{'JoinUs.Button' | translate}}</button>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div>
+    <app-sub-header></app-sub-header>
+
+    <div class="data" [ngClass]="{'mobile': appService.isMobile == true}">
+        <h1>{{'About.Header' | translate}}</h1>
+        <br><br>
+        <h3>{{'About.subHeader1' | translate}}</h3>
+        <p>{{'About.AboutUs' | translate}}</p>
+    
+        <br><br>
+    
+        <h3>{{'About.subHeader1' | translate}}</h3>
+        <p>{{'About.AboutUs' | translate}}</p>
+    </div>
+    
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+</div>
+

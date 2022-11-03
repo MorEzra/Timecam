@@ -1,0 +1,37 @@
+<div class="col-12 container" [ngClass]="{'mobile': appService.isMobile == true}">
+    <div class="wrapper">
+        <div class="inner">
+            <h2>{{'Footer.Header' | translate}}</h2>
+            <h3>{{'Footer.subHeader1' | translate}}</h3>
+            <div>
+                <app-contact-form></app-contact-form>
+            </div>
+        </div>
+
+        <div class="inner contact-details">
+            <h3>{{'Footer.subHeader2' | translate}}</h3>
+
+            <a style="margin-bottom: 20px;" href="tel:031234456">
+                <span style="color: #FF9100;">
+                    <fa-icon [icon]="phoneIcon"></fa-icon>
+                </span>
+                <span class="contact-detail"> +972 03 123 44 56</span>
+            </a>
+
+            <a href="mailto:example@gmail.com?subject=I want to join TimeCam!">
+                <span style="color: #FF9100;">
+                    <fa-icon [icon]="emailIcon"></fa-icon>
+                </span>
+                <span class="contact-detail"> example@gmail.com</span>
+            </a>
+
+            <div class="sub-menu">
+                <img src="../../../assets/logo/White (1).png" alt="TimeCam logo white" width="100px" height="auto" routerLink="/main">
+                <p>{{'Nav.Categories.Category1' | translate}}</p>
+                <p routerLink="/pricing">{{'Nav.Categories.Category2' | translate}}</p>
+                <p routerLink="/about">{{'Nav.Categories.Category3' | translate}}</p>
+                <p routerLink="/contact">{{'Nav.Categories.Category4' | translate}}</p>
+            </div>
+        </div>
+    </div>
+</div>

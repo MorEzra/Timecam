@@ -1,0 +1,42 @@
+<div class="container column col-12" [ngClass]="{'mobile': appService.isMobile == true}">
+    <div>
+        <app-datepicker (selectedDate)="filterTableDataByDate($event)"></app-datepicker><br>
+
+        <mat-form-field appearance="standard">
+            <mat-label>{{'About.fillRequest.Filter' | translate}}</mat-label>
+            <input matInput (keyup)="filterTableDataByText($event)" #input>
+        </mat-form-field>
+
+        <mat-tab-group animationDuration="0ms" style="text-align: center;">
+
+            <mat-tab label="First" style="overflow-y: hidden; overflow-x: auto;">
+                <app-table [dataSource]="dataSource"></app-table>
+            </mat-tab>
+
+            <mat-tab label="Second">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <fa-icon style="font-size: 20px; color: brown;" [icon]="chosenIcon"></fa-icon><span>Click to choose a smile</span>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="setChosenIcon('faSmileWink')">
+                        <fa-icon style="font-size: 20px; color: brown;" [icon]="faSmileWink"></fa-icon>
+                        <span>Wink</span>
+                    </button>
+                    <button mat-menu-item (click)="setChosenIcon('faSmile')">
+                        <fa-icon style="font-size: 20px; color: brown;" [icon]="faSmile"></fa-icon>
+                        <span>Smile</span>
+                    </button>
+                    <button mat-menu-item disabled>
+                        <fa-icon style="font-size: 20px; color: brown;" [icon]="faSmileBeam"></fa-icon>
+                        <span>Laugh</span>
+                    </button>
+                </mat-menu>
+            </mat-tab>
+
+            <mat-tab label="Third">
+                <fa-icon style="font-size: 80px; color: brown;" [icon]="faSmileWink"></fa-icon>
+            </mat-tab>
+
+        </mat-tab-group>
+    </div>
+</div>

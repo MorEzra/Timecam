@@ -1,0 +1,168 @@
+header {
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 700px;
+    
+    &.desktop{
+        &.pos-ltr{
+            background-image: url('../../../assets/images/people-work-at-office-en.jpg');
+            background-position: right;
+        }
+
+        &.pos-rtl{
+            background-image: url('../../../assets/images/people-work-at-office-he.jpg');
+            background-position: left;
+        }
+
+        & .content{
+            padding-top: 210px;
+            left: 80px;
+            right: 80px;
+            background-image: url('../../../assets/images/circle.svg');
+            background-size: 100px;
+            background-repeat: no-repeat;
+            background-position-y: 70px;
+            background-position-x: 150px;
+
+            &.pos-rtl{
+            background-position-x: 650px;
+            }
+
+            & h1{
+                font-size: 30px;
+                line-height: 35px;
+                color: #FF9100;
+            }
+        
+            & p{
+                font-size: 22px;
+            }
+        }
+    }
+
+    &.mobile {
+        padding: 120px 30px;
+        background-size: cover;
+
+        &.pos-ltr{
+            background-image: url('../../../assets/images/woman-in-office-en.jpg');
+        }
+
+        &.pos-rtl{
+            background-image: url('../../../assets/images/woman-in-office-he.jpg');
+        }
+
+        & h1{
+            font-size: 24px;
+            line-height: 35px;
+            color: #FF9100;
+        }
+    
+        & p{
+            font-size: 20px;
+        }
+    }
+}
+
+section.counter-container {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.slider {
+    width: 100%;
+    height: 450px;
+    padding-top: 100px;
+    background-color: #244F9025;
+    background-image: url('../../../assets/images/circles.svg');
+    background-repeat: no-repeat;
+    background-size: 400px;
+
+    &.pos-ltr{
+        background-position: right 15px;
+    }
+
+    &.pos-rtl{
+        background-position: left 15px;
+    }
+
+    &.mobile {
+        height: auto;
+        padding: 70px 0px;
+        background-image: url('../../../assets/images/circles_1.svg');
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-align: center;
+
+        & .details {
+            width: 100%;
+            padding: 0px 30px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+    }
+
+    & .image-container {
+        background-repeat: no-repeat;
+        background-size: 350px;
+        height: 500px;
+
+        &.pos-ltr{
+            background-image: url("../../../assets/images/graph-details-en.png");
+            background-position: left;
+        }
+    
+        &.pos-rtl{
+            background-image: url("../../../assets/images/graph-details-he.png");
+            background-position: right;
+        }
+    }
+
+    & .details {
+        width: auto;
+        height: 150px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+section.pricing {
+    width: 100%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &.mobile {
+        height: auto;
+        padding: 50px;
+    }
+}
+
+h2 {
+    font-size: 36px;
+    text-align: center;
+    color: #FF9100;
+}
+
+h3 {
+    color: #00144C;
+}
+
+.mobile {
+    & h2{
+        font-size: 24px;
+    }
+
+    & h3 {
+        font-size: 20px;
+    }
+}

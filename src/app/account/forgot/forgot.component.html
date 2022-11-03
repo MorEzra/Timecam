@@ -1,0 +1,39 @@
+<div>
+    <app-sub-header></app-sub-header>
+
+    <div class="container" [ngClass]="{'mobile': appService.isMobile == true}">
+        <h1>{{'Forgot.Header' | translate}}</h1>
+        <br>
+        <p style="color: #00144C;">{{'Forgot.Text' | translate}}</p>
+
+        <div>
+            <form>
+                <mat-form-field>
+                    <input matInput type="email" [formControl]="usernameFormControl" name="username"
+                        [(ngModel)]="userForgotDetails.username"
+                        placeholder="{{'Footer.Contact.Fields.Email' | translate}}" (click)="appService.onInputClick($event)"/>
+
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="usernameFormControl.touched && usernameFormControl.errors?.required">
+                        {{'Footer.Contact.Warnings.Email.Missing' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!usernameFormControl.pristine && usernameFormControl.errors?.pattern">
+                        {{'Footer.Contact.Warnings.Email.Invalid' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="usernameFormControl.touched && usernameFormControl.errors?.minlength">
+                        {{'Footer.Contact.Warnings.Email.Short' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!usernameFormControl.pristine && usernameFormControl.errors?.maxlength">
+                        {{'Footer.Contact.Warnings.Email.Long' | translate}}</mat-error>
+                </mat-form-field>
+
+                <button class="btn" style="margin-top: 20px;" [disabled]="!forgotFormGroup.valid">{{'Footer.Contact.Submit' | translate}}</button>
+            </form><br>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <app-footer></app-footer>
+</footer>
+

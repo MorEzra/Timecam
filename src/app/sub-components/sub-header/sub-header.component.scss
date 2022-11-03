@@ -1,0 +1,21 @@
+.container{
+    width: 100%;
+    height: 450px;
+    background-image: url('../../../assets/images/about-sub-header-en.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+
+    &.pos-rtl{
+        background-image: url('../../../assets/images/about-sub-header-he.jpg');
+    }
+
+    &.mobile{
+    height: 280px;
+    background-image: url('../../../assets/images/about-sub-header-mobile-en.jpg');
+
+        &.pos-rtl{
+            background-image: url('../../../assets/images/about-sub-header-mobile-he.jpg');
+        }
+    }
+}

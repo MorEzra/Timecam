@@ -1,0 +1,64 @@
+.container{
+    width: 750px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+
+    & h1 {
+        margin-top: -100px;
+        text-decoration: underline;
+    }
+
+    &.mobile{
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 10px;
+
+        & h1{
+            margin-top: -80px;
+        }
+
+        & .wrapper {
+            flex-direction: column;
+        }
+
+        & .inner {
+            padding: 0px;
+            text-align: center;
+
+            & .sub-menu {
+                text-align: start;
+            }
+        }
+
+        & .btn {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    & mat-error {
+        color: #00144C;
+        opacity: 1;
+        line-height: 14px;
+    }
+}
+
+.join-us-container {
+    width: 100%;
+    background-color: #244F91;
+    padding: 50px 0px 20px 0px;
+
+    &.mobile{
+        padding-bottom: 100px;
+    }
+}
+
+:host ::ng-deep {
+    p {
+        color: white;
+    }
+
+    &.mobile .customers img{
+        width: 220px;
+    }
+}

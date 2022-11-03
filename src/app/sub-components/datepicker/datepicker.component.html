@@ -1,0 +1,30 @@
+<mat-form-field>
+    <input matInput [matDatepicker]="picker" [matDatepickerFilter]="datesFilter"
+        placeholder="{{'About.fillRequest.Date' | translate}}" (dateChange)="onDateSelected($event)" max="today">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<div>
+    <h2>testing arrows</h2>
+    <div class="date-selector-wrapper">
+        <div class="selector" [ngClass]="{'rtl': appService.locale == 'he'}">
+            <span (click)="setDate('add', 'month')">
+                <fa-icon [icon]="leftArrow"></fa-icon>
+            </span>
+            <h3>{{currMonth}}</h3>
+            <span (click)="setDate('subtract', 'month')">
+                <fa-icon [icon]="rightArrow"></fa-icon>
+            </span>
+        </div>
+        <div class="selector" [ngClass]="{'rtl': appService.locale == 'he'}">
+            <span (click)="setDate('add', 'year')">
+                <fa-icon [icon]="leftArrow"></fa-icon>
+            </span>
+            <h3>{{currYear}}</h3>
+            <span (click)="setDate('subtract', 'year')">
+                <fa-icon [icon]="rightArrow"></fa-icon>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,166 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$TimeCam-primary: mat.define-palette(mat.$indigo-palette);
+$TimeCam-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$TimeCam-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$TimeCam-theme: mat.define-light-theme((
+  color: (
+    primary: $TimeCam-primary,
+    accent: $TimeCam-accent,
+    warn: $TimeCam-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($TimeCam-theme);
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;700&display=swap');
+
+* {
+    font-family: 'Assistant', sans-serif!important;
+}
+
+html, body{
+    text-align: start;
+    box-sizing: border-box;
+}
+
+// Buttons
+.btn {
+    border-radius: 40px;
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(180deg, #FF9100 42.19%, #f07400 100%);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &.full{
+        background: linear-gradient(180deg, #0F7DEF 40.72%, #00144C 177%);
+        color: white;
+
+        &:hover{
+            background: linear-gradient(180deg, #00144C -53%, #0F7DEF 76.27%);
+        }
+    }
+
+    &.empty{
+        background: linear-gradient(180deg, #ffffff 40.72%, #e7e7e7 177%);
+        border: 2px solid #e7e7e7;
+        color: #00144C;
+
+        &:hover{
+            border: 2px solid #e7e7e7;
+            background: linear-gradient(180deg, #e7e7e7 0%, #ffffff 69.79%);
+            color: #00144C;
+        }
+    }
+
+    &.wide{
+        width: 250px;
+    }
+
+    &.transparent{
+        background: #ffffff50;
+        color: #00144C;
+    }
+
+    &.no-border{
+        border: none;
+    }
+
+    &:hover{
+        background: linear-gradient(180deg, #f07400 0%, #FF9100 69.79%);
+        color: white;
+    }
+}
+
+// Headers
+h1 {
+    font-weight: bold!important;
+    font-size: 36px!important;
+    color: #FF9100;
+}
+
+h2{
+    font-weight: bold!important;
+    font-size: 28px!important;
+    line-height: 28px!important;
+    color: #00144C;
+}
+
+h3 {
+    font-weight: bold!important;
+    font-size: 22px!important;
+    line-height: 24px!important;
+    color: #0F7DEF;
+}
+
+p {
+    font-size: 18px;
+    line-height: 25px;
+    color: #3F3F3F;
+}
+
+.mobile {
+    h1 {
+        font-size: 28px!important;;
+    }
+    
+    h2{
+        font-size: 24px!important;;
+    }
+    
+    h3 {
+        font-size: 20px!important;;
+    }
+    
+    p {
+        font-size: 18px!important;;
+    }
+
+    mat-form-field {
+        height: 50px;
+        width: 100%;
+    }
+}
+
+//Forms
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-form-field {
+    height: 50px;
+    width: 350px;
+    font-size: 18px!important;
+    line-height: 18px;
+    align-items: center;
+    margin-bottom: 40px;
+
+}
+
+html, body { height: 100%; }

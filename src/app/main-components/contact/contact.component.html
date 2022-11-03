@@ -1,0 +1,35 @@
+<div>
+    <app-sub-header></app-sub-header>
+
+    <div class="container" [ngClass]="{'mobile': appService.isMobile == true}">
+        <h1>{{'Footer.Header' | translate}}</h1>
+        <br>
+        <p>{{'Footer.subHeader1' | translate}}</p>
+
+        <div>
+            <app-contact-form></app-contact-form>
+        </div>
+
+        <div class="inner contact-details">
+            <p>{{'Footer.subHeader2' | translate}}</p>
+
+            <a style="margin-bottom: 20px;" href="tel:031234456">
+                <span style="color: #FF9100;">
+                    <fa-icon [icon]="phoneIcon"></fa-icon>
+                </span>
+                <span class="contact-detail"> +972 03 123 44 56</span>
+            </a>
+
+            <a href="mailto:example@gmail.com?subject=I want to join TimeCam!">
+                <span style="color: #FF9100;">
+                    <fa-icon [icon]="emailIcon"></fa-icon>
+                </span>
+                <span class="contact-detail"> example@gmail.com</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div *isMobile>
+    <app-sticky-bottom></app-sticky-bottom>
+</div>

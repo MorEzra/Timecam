@@ -1,0 +1,93 @@
+<div>
+    <app-sub-header></app-sub-header>
+
+    <div class="container" [ngClass]="{'mobile': appService.isMobile == true}">
+        <h1>{{'Register.Header' | translate}}</h1>
+        <br>
+        <p>{{'Register.Text' | translate}}</p>
+
+        <div>
+            <form>
+                <mat-form-field>
+                    <input matInput type="text" [formControl]="companyNameFormControl" name="companyName"
+                        placeholder="{{'Register.Fields.CompanyName' | translate}}"
+                        [(ngModel)]="userRegisterDetails.companyName" (click)="appService.onInputClick($event)" />
+
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="companyNameFormControl.touched && companyNameFormControl.errors?.required">
+                        {{'Register.Warnings.CompanyName.Missing' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!companyNameFormControl.pristine && companyNameFormControl.errors?.pattern">
+                        {{'Register.Warnings.CompanyName.Invalid' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="companyNameFormControl.touched && companyNameFormControl.errors?.minlength">
+                        {{'Register.Warnings.CompanyName.Short' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!companyNameFormControl.pristine && companyNameFormControl.errors?.maxlength">
+                        {{'Register.Warnings.CompanyName.Long' | translate}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="text" [formControl]="fullnameFormControl" name="fullname"
+                        placeholder="{{'Register.Fields.FullName' | translate}}"
+                        [(ngModel)]="userRegisterDetails.fullname" (click)="appService.onInputClick($event)" />
+
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="fullnameFormControl.touched && fullnameFormControl.errors?.required">
+                        {{'Register.Warnings.FullName.Missing' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!fullnameFormControl.pristine && fullnameFormControl.errors?.pattern">
+                        {{'Register.Warnings.FullName.Invalid' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="fullnameFormControl.touched && fullnameFormControl.errors?.minlength">
+                        {{'Register.Warnings.FullName.Short' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!fullnameFormControl.pristine && fullnameFormControl.errors?.maxlength">
+                        {{'Register.Warnings.FullName.Long' | translate}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="number" [formControl]="phoneFormControl" name="phone"
+                        placeholder="{{'Register.Fields.Phone' | translate}}" [(ngModel)]="userRegisterDetails.phone"
+                        (click)="appService.onInputClick($event)" />
+
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="phoneFormControl.touched && phoneFormControl.errors?.required">
+                        {{'Register.Warnings.Phone.Missing' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="phoneFormControl.touched && phoneFormControl.errors?.pattern">
+                        {{'Register.Warnings.Phone.Invalid' | translate}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="text" [formControl]="emailFormControl" name="email"
+                        placeholder="{{'Register.Fields.Email' | translate}}" [(ngModel)]="userRegisterDetails.email"
+                        (click)="appService.onInputClick($event)" />
+
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="emailFormControl.touched && emailFormControl.errors?.required">
+                        {{'Register.Warnings.Email.Missing' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!emailFormControl.pristine && emailFormControl.errors?.pattern">
+                        {{'Register.Warnings.Email.Invalid' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="emailFormControl.touched && emailFormControl.errors?.minlength">
+                        {{'Register.Warnings.Email.Short' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!emailFormControl.pristine && emailFormControl.errors?.maxlength">
+                        {{'Register.Warnings.Email.Long' | translate}}</mat-error>
+                </mat-form-field><br>
+
+                <button class="btn" [disabled]="!registerFormGroup.valid">{{'Register.Submit' | translate}}</button>
+            </form><br>
+
+            <span>{{'Register.Registered' | translate}} <a routerLink="/account/login">{{'Register.Login' |
+                    translate}}</a></span>
+        </div>
+    </div>
+
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+</div>
+

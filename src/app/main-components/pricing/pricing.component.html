@@ -1,0 +1,24 @@
+<div>
+    <app-sub-header></app-sub-header>
+
+    <div class="data" [ngClass]="{'mobile': appService.isMobile == true}">
+        <h1>{{'Pricing.Header' | translate}}</h1>
+        <br><br>
+        <h3>{{'Pricing.subHeader1' | translate}}</h3>
+        <p>{{'Pricing.Text' | translate}}</p>
+    </div>
+
+    <app-pricing-section [data]="pricingData"></app-pricing-section>
+
+    <br><br><br><br>
+
+    <app-join-us [src]="src"></app-join-us>
+
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+</div>
+
+<div *isMobile>
+    <app-sticky-bottom></app-sticky-bottom>
+</div>

@@ -1,0 +1,98 @@
+.container{
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0px;
+
+    & table {
+        border: 1px solid rgb(240, 240, 240);
+        text-align: start;
+        
+        & th, td{
+            font-size: 18px;
+            vertical-align: middle;
+            white-space: nowrap;
+            width: 120px;
+        }
+
+        & fa-icon:hover{
+            color: #FF9100;
+        }
+
+        & input {
+            border-bottom: 1px solid gray;
+        }
+    }
+
+    &.mobile{
+        & table {
+            border: none;
+
+            & th {
+                border: none;
+            }
+            
+            & th, td{
+                font-size: 16px;
+                vertical-align: middle;
+                padding: 15px 10px;
+                width: auto;
+            }
+        }
+    }
+}
+
+.paginator-container{
+    display: flex;
+    justify-content: flex-start!important;
+    margin-bottom: 100px;
+}
+
+:host ::ng-deep {
+    & .mat-tab-body-content::-webkit-scrollbar{
+        overflow-y: hidden;
+    }
+    
+    & .col-6{
+        flex: 0 0 100%!important;
+        max-width: 100%!important;
+    }
+    
+    & .mat-paginator-page-size{
+        align-items: center!important;
+    }
+    
+    & .mat-paginator-page-size-select{
+        margin: -20px 5px 0px 0px!important;
+    }
+    
+    & .mat-paginator-container{
+        flex-wrap: nowrap!important;
+    }
+    
+    & .mat-form-field-infix{
+        width: 40px!important;
+        padding: 3px!important;
+        padding-top: 7px!important;
+    }
+    
+    & .mat-paginator-page-size-label{
+        white-space: nowrap;
+    }
+    
+    & .mat-paginator-range-label{
+        white-space: nowrap;
+    }
+    
+    & th.mat-header-cell {
+        text-align: center!important;
+    }
+    
+    & td.mat-cell{
+        text-align: center!important;
+    }
+    
+    & mat-table-sticky{
+        text-align: center!important;
+    }
+}

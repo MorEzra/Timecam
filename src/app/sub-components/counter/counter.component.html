@@ -1,0 +1,14 @@
+<div>
+    <!-- <p class="num">{{data.amount}}</p> -->
+</div>
+
+<div>
+    <span>
+        <img src={{data.icon}} alt="icon" width="65px">
+    </span>
+    <span class="details">
+        <p class="num" [CountTo]="data.amount" [from]="0" [duration]="2"></p>
+        <h2>{{data.header}}</h2>
+        <p>{{data.details}}</p>
+    </span>
+</div>

@@ -1,0 +1,62 @@
+<mat-card class="card" [ngClass]="{'mobile': appService.isMobile == true, 'popular': data.type == 'Popular' || data.type == 'פופולרי'}">
+    <mat-card-header class="header" [ngClass]="{'popular': data.type == 'Popular' || data.type == 'פופולרי'}">
+        <mat-card-title>
+            <span *ngIf="data.type == 'Popular' || data.type == 'פופולרי'" style="color: white">
+                <fa-icon class="bounce" [icon]="popularIcon"></fa-icon>
+            </span>
+            {{data.type}}
+        </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="container">
+        <div *ngIf="appService.isMobile == false" class="options-container">
+            <div *ngFor="let opt of data.options">
+                <span *ngIf="opt.type == 1" style="color: red;">
+                    <fa-icon [icon]="xIcon"></fa-icon>
+                </span>
+                <span *ngIf="opt.type == 2" style="color: green;">
+                    <fa-icon [icon]="vIcon"></fa-icon>
+                </span>
+                {{opt.info}}
+            </div>
+        </div>
+
+        <div *ngIf="appService.isMobile == true">
+            <div *ngFor="let opt of data.options" style="line-height: 40px;">
+                <span *ngIf="opt.type == 2">
+                    <fa-icon [icon]="vIcon" style="color: green;"></fa-icon>
+                    {{opt.info}}
+                </span>
+            </div>
+            <mat-accordion *ngIf="!hasExceptions()">
+                <mat-expansion-panel hideToggle (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title style="display: flex; justify-content: center;">
+                            {{'Pricing.Toggle' | translate}}
+                            <span style="color: #FF9100">
+                                <fa-icon *ngIf="panelOpenState == false" [icon]="downArrowIcon"></fa-icon>
+                                <fa-icon *ngIf="panelOpenState == true" [icon]="upArrowIcon"></fa-icon>
+                            </span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div *ngFor="let opt of data.options" style="line-height: 40px;">
+                        <span *ngIf="opt.type == 1">
+                            <fa-icon [icon]="xIcon" style="color: red;"></fa-icon>
+                            {{opt.info}}
+                        </span>
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+            <hr>
+        </div>
+
+        <div class="prices">
+            <span class="price">{{data.monthlyPrice}}</span>$ {{'Pricing.Monthly' | translate}}
+            <span class="price">\ {{data.yearlyPrice}}</span>$ {{'Pricing.Yearly' | translate}}
+        </div>
+
+        <span class="btn">
+            {{'Pricing.Purchase' | translate}}
+        </span>
+    </mat-card-content>
+</mat-card>

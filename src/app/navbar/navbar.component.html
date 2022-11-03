@@ -1,0 +1,59 @@
+<nav class="nav navbar navbar-expand-lg navbar-light bg-light" [ngClass]="{'mobile': appService.isMobile == true}">
+    <a class="navbar-brand" routerLink="/main"><img src="../../assets/logo/Color (2).png" alt="Timecam logo"
+            width="135px" height="auto"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="nav-container collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-1">
+            <li class="nav-item mr-3">
+                <a>{{'Nav.Categories.Category1' | translate}}</a>
+            </li>
+            <li class="nav-item mr-3">
+                <a routerLink="/pricing">{{'Nav.Categories.Category2' | translate}}</a>
+            </li>
+            <li class="nav-item mr-3">
+                <a routerLink="/about">{{'Nav.Categories.Category3' | translate}}</a>
+            </li>
+            <li class="nav-item mr-3">
+                <a routerLink="/contact">{{'Nav.Categories.Category4' | translate}}</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav mr-1">
+            <li class="nav-item">
+                <!-- <span class="btn" (click)="navigate('login')"> -->
+                <a class="mr-3" routerLink="tel:03-1234567">
+                    <fa-icon [icon]="phoneIcon"></fa-icon> 03-1234567
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <!-- <span class="btn" (click)="navigate('login')"> -->
+                <span class="btn empty mr-3" routerLink="/account/login">
+                    <fa-icon [icon]="userIcon"></fa-icon> {{'Nav.Login' | translate}}
+                </span>
+            </li>
+
+            <li *ngIf="appService.isMobile == false" class="nav-item">
+                <!-- <span class="btn" (click)="navigate('register')"> -->
+                <span class="btn full mr-3" routerLink="/account/register">
+                    {{'Nav.Register' | translate}}
+                </span>
+            </li>
+
+            <li class="nav-item mr-3">
+                <span (click)="changeDirection('he')" [ngClass]="{'disabled':appService.locale == 'he'}"><img
+                        src="./assets/flags/he.png" width="25px"
+                        [attr.data-target]="appService.isMobile == true ? '#navbarSupportedContent' : null"
+                        [attr.data-toggle]="appService.isMobile == true ? 'collapse' : null"></span>
+                <span (click)="changeDirection('en')" [ngClass]="{'disabled':appService.locale == 'en'}"><img
+                        src="./assets/flags/en.png" width="25px" style="margin: 0px 10px"
+                        [attr.data-target]="appService.isMobile == true ? '#navbarSupportedContent' : null"
+                        [attr.data-toggle]="appService.isMobile == true ? 'collapse' : null"></span>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,2 @@
+<div class="col-12 container" [ngClass]="{'mobile': appService.isMobile == true}">
+    <app-pricing-card *ngFor="let opt of data" [data]="opt">

@@ -1,0 +1,42 @@
+<div>
+    <header
+        [ngClass]="{'pos-ltr': isRtl == false, 'pos-rtl': isRtl == true, 'mobile': appService.isMobile == true, 'desktop': appService.isMobile == false}">
+        <div [ngClass]="{'pos-rtl': isRtl == true, 'content col-8': appService.isMobile == false}">
+            <h1>Some text Some text</h1>
+            <p class="mb-5">Some text Some text Some text Some text<br>Some text Some text Some text</p>
+            <span *ngIf="appService.isMobile == false" class="btn full" routerLink="/account/register">
+                {{'Nav.Register' | translate}}
+            </span>
+            <span class="btn wide"
+                [ngClass]="{'empty mr-3': appService.isMobile == false, 'transparent no-border': appService.isMobile == true}"
+                (click)="scroll(slider)">
+                {{'Nav.Categories.Category1' | translate}}
+            </span>
+        </div>
+    </header>
+
+    <section *ngIf="appService.isMobile == false" class="counter-container">
+        <app-counter *ngFor="let data of counterData" [data]="data"></app-counter>
+    </section>
+
+    <section #slider class="slider"
+        [ngClass]="{'pos-ltr': isRtl == false, 'pos-rtl': isRtl == true, 'mobile': appService.isMobile == true}">
+        <div
+            [ngClass]="{'pos-ltr': isRtl == false, 'pos-rtl': isRtl == true, 'image-container': appService.isMobile == false}">
+            <div class="details">
+                <h2>{{'Nav.Categories.Category1' | translate}}</h2>
+                <h3>Some text and image changes every x seconds</h3>
+                <p>Some text Some text Some text</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" [ngClass]="{'mobile': appService.isMobile == true}">
+        <h2>{{'Nav.Categories.Category2' | translate}}</h2>
+        <app-pricing-section [data]="pricingData"></app-pricing-section>
+    </section>
+
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+</div>

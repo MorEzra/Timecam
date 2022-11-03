@@ -1,0 +1,32 @@
+div {
+    display: flex;
+    width: 330px;
+    height: auto;
+
+    & .num{
+        font-weight: bold;
+        font-size: 50px;
+        line-height: 30px;
+        color: #00144C;
+    }
+
+    & h2{
+        font-weight: bold;
+        font-size: 24px;
+        color: #00144C;
+    }
+
+    & p{
+        font-size: 18px;
+        line-height: 20px;
+        color: #00144C;
+    }
+
+    & img{
+        margin: 55px 20px 0px 20px;
+    }
+
+    & .details{
+        width: 180px;
+    }
+}

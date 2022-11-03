@@ -1,0 +1,63 @@
+<div>
+    <app-sub-header></app-sub-header>
+
+    <div class="container" [ngClass]="{'mobile': appService.isMobile == true}">
+        <h1>{{'Login.Header' | translate}}</h1>
+        <br>
+        <p style="color: #00144C;">{{'Login.Text' | translate}}</p>
+
+        <div>
+            <form>
+                <mat-form-field>
+                    <input matInput type="email" [formControl]="usernameFormControl" name="username"
+                        [(ngModel)]="userLoginDetails.username" placeholder="{{'Login.Fields.Email' | translate}}"
+                        (click)="appService.onInputClick($event)" />
+
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="usernameFormControl.touched && usernameFormControl.errors?.required">
+                        {{'Login.Warnings.Email.Missing' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!usernameFormControl.pristine && usernameFormControl.errors?.pattern">
+                        {{'Login.Warnings.Email.Invalid' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="usernameFormControl.touched && usernameFormControl.errors?.minlength">
+                        {{'Login.Warnings.Email.Short' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!usernameFormControl.pristine && usernameFormControl.errors?.maxlength">
+                        {{'Login.Warnings.Email.Long' | translate}}</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="password" [formControl]="passwordFormControl" name="password"
+                        placeholder="{{'Login.Fields.Password' | translate}}" [(ngModel)]="userLoginDetails.password"
+                        (click)="appService.onInputClick($event)" />
+
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="passwordFormControl.touched && passwordFormControl.errors?.required">
+                        {{'Login.Warnings.Password.Missing' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!passwordFormControl.pristine && passwordFormControl.errors?.pattern">
+                        {{'Login.Warnings.Password.Invalid' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="passwordFormControl.touched && passwordFormControl.errors?.minlength">
+                        {{'Login.Warnings.Password.Short' | translate}}</mat-error>
+                    <mat-error [style.fontSize.px]="14"
+                        *ngIf="!passwordFormControl.pristine && passwordFormControl.errors?.maxlength">
+                        {{'Login.Warnings.Password.Long' | translate}}</mat-error>
+                </mat-form-field>
+
+                <button class="btn" style="margin-top: 20px;" [disabled]="!loginFormGroup.valid">{{'Login.Login' |
+                    translate}}</button>
+            </form><br>
+
+            <span>{{'Login.NotRegistered' | translate}} <a routerLink="/account/register">{{'Login.Register' |
+                    translate}}</a></span><br><br>
+            <a routerLink="/account/forgot">{{'Login.Forgot' | translate}}</a><span *ngIf="appService.isMobile == true"><br><br></span>
+        </div>
+    </div>
+
+    <div class="join-us-container" [ngClass]="{'mobile': appService.isMobile == true}">
+        <app-join-us [src]="src"></app-join-us>
+    </div>
+</div>
+

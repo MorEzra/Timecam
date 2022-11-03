@@ -1,0 +1,47 @@
+<form [ngClass]="{'mobile': appService.isMobile == true}">
+    <mat-form-field>
+        <input matInput type="text" [formControl]="fullnameFormControl" name="fullname"
+            placeholder="{{'Footer.Contact.Fields.FullName' | translate}}" [(ngModel)]="userContactDetails.fullname"
+            (click)="appService.onInputClick($event)" />
+
+        <mat-error [style.fontSize.px]="14" *ngIf="fullnameFormControl.touched && fullnameFormControl.errors?.required">
+            {{'Footer.Contact.Warnings.FullName.Missing' | translate}}</mat-error>
+        <mat-error [style.fontSize.px]="14"
+            *ngIf="!fullnameFormControl.pristine && fullnameFormControl.errors?.pattern">
+            {{'Footer.Contact.Warnings.FullName.Invalid' | translate}}</mat-error>
+        <mat-error [style.fontSize.px]="14"
+            *ngIf="fullnameFormControl.touched && fullnameFormControl.errors?.minlength">
+            {{'Footer.Contact.Warnings.FullName.Short' | translate}}</mat-error>
+        <mat-error [style.fontSize.px]="14"
+            *ngIf="!fullnameFormControl.pristine && fullnameFormControl.errors?.maxlength">
+            {{'Footer.Contact.Warnings.FullName.Long' | translate}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="number" [formControl]="phoneFormControl" name="phone"
+            placeholder="{{'Footer.Contact.Fields.Phone' | translate}}" [(ngModel)]="userContactDetails.phone"
+            (click)="appService.onInputClick($event)" />
+
+        <mat-error [style.fontSize.px]="14" *ngIf="phoneFormControl.touched && phoneFormControl.errors?.required">
+            {{'Footer.Contact.Warnings.Phone.Missing' | translate}}</mat-error>
+        <mat-error [style.fontSize.px]="14" *ngIf="phoneFormControl.touched && phoneFormControl.errors?.pattern">
+            {{'Footer.Contact.Warnings.Phone.Invalid' | translate}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="text" [formControl]="emailFormControl" name="email"
+            placeholder="{{'Footer.Contact.Fields.Email' | translate}}" [(ngModel)]="userContactDetails.email"
+            (click)="appService.onInputClick($event)" />
+
+        <mat-error [style.fontSize.px]="14" *ngIf="emailFormControl.touched && emailFormControl.errors?.required">
+            {{'Footer.Contact.Warnings.Email.Missing' | translate}}</mat-error>
+        <mat-error [style.fontSize.px]="14" *ngIf="!emailFormControl.pristine && emailFormControl.errors?.pattern">
+            {{'Footer.Contact.Warnings.Email.Invalid' | translate}}</mat-error>
+        <mat-error [style.fontSize.px]="14" *ngIf="emailFormControl.touched && emailFormControl.errors?.minlength">
+            {{'Footer.Contact.Warnings.Email.Short' | translate}}</mat-error>
+        <mat-error [style.fontSize.px]="14" *ngIf="!emailFormControl.pristine && emailFormControl.errors?.maxlength">
+            {{'Footer.Contact.Warnings.Email.Long' | translate}}</mat-error>
+    </mat-form-field>
+
+    <button class="btn" [disabled]="!contactFormGroup.valid">{{'Footer.Contact.Submit' | translate}}</button>
+</form><br><br>

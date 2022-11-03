@@ -1,0 +1,13 @@
+<section class="direction column col-12" [dir]="appService.direction" (window:resize)="onResize($event)">
+    <nav>
+        <app-navbar></app-navbar>
+    </nav>
+    
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+
+    <div *ngIf="appService.isMobile == true">
+        <app-sticky-bottom></app-sticky-bottom>
+    </div>
+</section>
